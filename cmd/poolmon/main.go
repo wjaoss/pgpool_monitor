@@ -36,6 +36,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer rows.Close()
 
 	var pools []PgpoolPool
 	for rows.Next() {
