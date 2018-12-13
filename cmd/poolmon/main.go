@@ -31,6 +31,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer db.Close()
 
 	rows, err := db.Queryx("SHOW pool_pools")
 	if err != nil {
